@@ -1,0 +1,141 @@
+@import "twitter/bootstrap/bootstrap";
+@import "twitter/bootstrap/mixins";
+
+// Set the correct sprite paths
+@iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
+@iconWhiteSpritePath: image-url("twitter/bootstrap/glyphicons-halflings-white.png");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+@fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot?#iefix");
+@fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
+
+// Font Awesome
+@import "fontawesome/font-awesome";
+
+// Glyphicons
+//@import "twitter/bootstrap/sprites.less";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
+
+body{
+  font-family: 'Gotham-Book', Helvetica, Arial;
+  color: #5E5E5E;
+}
+
+h1{
+  font-size: 21px;
+  font-weight: normal;
+}
+
+h2{
+  font-family: 'Gotham-Book', Helvetica, Arial;
+  font-size: 16px;
+  line-height: 2em;
+  margin: 0;
+  &.gray{
+    color: #919191;
+  }
+}
+
+section{
+  .header{
+    margin: 30px auto;
+    width: 80%;
+    h1{
+      margin-bottom: 30px;
+      padding: 8px 22px;
+      display: inline-block;
+      text-transform: uppercase;
+      border: 2px solid #000;
+      .border-radius(5px);
+    }
+    &.bg-pic{
+      color: #fff;
+    h1{
+      color: #fff;
+      border-color: #fff;
+      span{
+        color: #5E5E5E;
+        margin-right: 10px;
+      }
+    }
+  }
+  }
+  &.page1{
+    h1{
+      font-family: 'Gotham-Book', Helvetica, Arial;
+      font-weight: normal;
+      font-size: 29px;
+      margin-top: 170px;
+      color: #010000;
+    }
+    margin-top: 20px;
+  }
+  &.page2, &.page3, &.page4{
+    text-align: center;
+    h1{
+      color: #010000;
+      span{
+        color: #5E5E5E;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.main{
+  &.white{
+    background: white;
+  }
+  &.green{
+    background: #4bb896;
+  }
+}
+
+.img-icon{
+max-height: 116px;
+}
+
+.bg-pic{
+  background-image: url('ballroom.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  &.header{
+    width: 100%;
+  }
+}
+
+img.support {
+ max-height: 80px !important;
+}
+
+.inverse-link{
+  background: white;
+  color: black;
+  padding: 6px 64px;
+  .border-radius(4px);
+}
+
+footer{
+  text-align: center;
+  .nav{
+   font-family: 'Minion Pro', Garamond, Arial;
+   font-size: 21px;
+   a{
+    color: lighten(@gray, 20%);
+    padding: 0 40px;
+   }
+  }
+}
