@@ -9,6 +9,7 @@
       <div class="row">
         <div class="col-sm-6">
           <h1>We are developers and designers who volunteer to make a difference.</h1>
+          <%= link_to 'Join Us!', sign_up_index_path, class: 'btn btn-default signup' %>
         </div>
         <div class="col-sm-6">
           <%= image_tag 'home_bubble.png', class: 'img-responsive' %>
@@ -117,39 +118,44 @@
 
     <section class="page4">
       <div class="well bg-pic header">
-        <h1>PROGRAMS</h1>
-        <h2>
-          There are multiple ways you can get involved,
-          whether it is through our;
-        </h2>
+        <div class="shadow"></div>
         <div class="row">
+          <div class="col-sm-12">
+            <h1>PROGRAMS</h1>
+            <h2>
+              There are multiple ways you can get involved,<br />
+              whether it is through our;
+            </h2>
+          </div>
+        </div>
+        <div class="row category-links">
           <div class="col-sm-4">
-            <%= link_to 'Fellowship', root_path, class: 'inverse-link' %>
+            <%= link_to 'Fellowship', fellowship_path, class: 'inverse-link' %>
           </div>
           <div class="col-sm-4">
-            <%= link_to 'Incubator', root_path, class: 'inverse-link' %>
+            <%= link_to 'Incubator', incubator_path, class: 'inverse-link' %>
           </div>
           <div class="col-sm-4">
-            <%= link_to 'Brigade', root_path, class: 'inverse-link' %>
+            <%= link_to 'Brigade', brigade_path, class: 'inverse-link' %>
           </div>
         </div>
       </div>
-        <h2 class="gray">
-          WHO'S ONBOARD
-        </h2>
-          <div class="row">
-            <div class="col-sm-3">
-              <%= image_tag 'support-logo.png', class: 'img-responsive support' %>
-            </div>
-            <div class="col-sm-3">
-              <%= image_tag 'support-logo2.png', class: 'img-responsive support' %>
-            </div>
-            <div class="col-sm-3">
-              <%= image_tag 'support-logo3.png', class: 'img-responsive support' %>
-            </div>
-            <div class="col-sm-3">
-              <%= image_tag 'support-logo4.png', class: 'img-responsive support' %>
-            </div>
+      <h2 class="gray">
+        WHO'S ONBOARD
+      </h2>
+      <div class="row">
+        <div class="col-sm-3">
+          <%= image_tag 'support-logo.png', class: 'img-responsive support' %>
+        </div>
+        <div class="col-sm-3">
+          <%= image_tag 'support-logo2.png', class: 'img-responsive support' %>
+        </div>
+        <div class="col-sm-3">
+          <%= image_tag 'support-logo3.png', class: 'img-responsive support' %>
+        </div>
+        <div class="col-sm-3">
+          <%= image_tag 'support-logo4.png', class: 'img-responsive support' %>
+        </div>
       </div>
     </section>
 

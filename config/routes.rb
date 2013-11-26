@@ -1,5 +1,15 @@
 CodeForAus::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root "page#show"
+
+  [:fellowship, :incubator, :brigade].each do |r|
+    get r.to_s => "page##{r.to_s}", as: r
+  end
+
+  resources :sign_up, only: [:index, :create] do
+    get 'success'
+  end
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
