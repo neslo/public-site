@@ -49,6 +49,13 @@ h2{
   }
 }
 
+h3{
+  font-size: 15px;
+  line-height: 2em;
+  margin: 0;
+  font-weight: normal;
+}
+
 section{
   .header{
     margin: 30px auto;
@@ -63,15 +70,17 @@ section{
     }
     &.bg-pic{
       color: #fff;
-    h1{
-      color: #fff;
-      border-color: #fff;
-      span{
-        color: #5E5E5E;
-        margin-right: 10px;
+      h1, h2{
+        color: #fff;
+      }
+      h1{
+        border-color: #fff;
+        span{
+          color: #5E5E5E;
+          margin-right: 10px;
+        }
       }
     }
-  }
   }
   &.page1{
     h1{
@@ -85,6 +94,7 @@ section{
   }
   &.page2, &.page3, &.page4{
     text-align: center;
+    margin: 50px 0 80px;
     h1{
       color: #010000;
       span{
@@ -105,37 +115,102 @@ section{
 }
 
 .img-icon{
-max-height: 116px;
+  max-height: 116px;
 }
 
 .bg-pic{
   background-image: url('ballroom.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
   &.header{
     width: 100%;
   }
 }
 
+.shadow{
+  width: 100%;
+  height: 100%;
+  background: black;
+  position: absolute;
+  margin: -19px;
+  .opacity(0.5);
+}
+
 img.support {
- max-height: 80px !important;
+  height: 60px !important;
+}
+
+label, .checkbox{
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.btn.signup{
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 22px;
+  padding: 12px 24px;
+  text-decoration: none;
+  color: @gray;
+}
+
+form{
+  margin: 30px 0;
+  input{
+  margin-bottom: 10px;
+  }
 }
 
 .inverse-link{
   background: white;
-  color: black;
+  color: black !important;
   padding: 6px 64px;
   .border-radius(4px);
+  text-decoration: none !important;
+}
+
+.hidden-nav{
+  background: #4bb896;
+  height: 50px;
+  top: 0;
+  position: fixed;
+  margin-top: -50px;
+  width: 100%;
+  .box-shadow(0 0 9px black);
+  &.show{
+    margin-top: 0 !important;
+  }
+  .signup{
+    font-size: 16px;
+    padding: 4px 12px;
+    margin-top: 8px;
+  }
+}
+
+.social-links{
+  margin: 20px 0;
+  img{
+  margin: 0 40px;
+}
+}
+
+.category-links{
+  margin: 40px 0;
+  a{
+    margin: 10px 0;
+    display: inline-block;
+  }
 }
 
 footer{
   text-align: center;
   .nav{
-   font-family: 'Minion Pro', Garamond, Arial;
-   font-size: 21px;
-   a{
-    color: lighten(@gray, 20%);
-    padding: 0 40px;
-   }
+    font-family: 'Minion Pro', Garamond, Arial;
+    font-size: 21px;
+    a{
+      color: lighten(@gray, 20%);
+      padding: 0 40px;
+    }
   }
 }

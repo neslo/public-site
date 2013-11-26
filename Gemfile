@@ -26,6 +26,10 @@ end
 gem 'foreman'
 gem 'zeus'
 gem 'puma'
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'mailchimp-api', require: 'mailchimp'
+gem 'pry'
+gem 'simple_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
