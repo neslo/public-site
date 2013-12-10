@@ -29,18 +29,22 @@
 // Example:
 // @linkColor: #ff0000;
 
+@import url('http://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('http://fonts.googleapis.com/css?family=Josefin+Slab:300,400');
+
 body{
-  font-family: 'Gotham-Book', Helvetica, Arial;
+  font-family: 'Montserrat', Helvetica, Arial;
   color: #5E5E5E;
 }
 
 h1{
+  font-family: 'Montserrat', Helvetica, Arial;
   font-size: 21px;
   font-weight: normal;
 }
 
 h2{
-  font-family: 'Gotham-Book', Helvetica, Arial;
+  font-family: 'Montserrat', Helvetica, Arial;
   font-size: 16px;
   line-height: 2em;
   margin: 0;
@@ -67,15 +71,20 @@ h3{
 
 section{
   .header{
-    margin: 40px auto;
+    margin: 40px auto 60px;
     width: 80%;
     h1{
       margin-bottom: 30px;
-      padding: 8px 22px;
+      padding: 10px 28px;
       display: inline-block;
       text-transform: uppercase;
       border: 2px solid #000;
-      .border-radius(5px);
+      .border-radius(9px);
+      font-size: 22px;
+    }
+    h2{
+      font-size: 18px;
+      font-weight: 300;
     }
     &.bg-pic{
       color: #fff;
@@ -93,19 +102,35 @@ section{
     }
   }
   &.page1{
+    text-align: center;
     h1{
-      font-family: 'Gotham-Book', Helvetica, Arial;
+      font-family: 'Montserrat', Helvetica, Arial;
       font-weight: normal;
       font-size: 29px;
       margin-top: 170px;
       color: #010000;
+      margin-bottom: 60px;
     }
     margin-top: 20px;
   }
   &.page2, &.page3, &.page4{
+    border-bottom: 2px solid lighten(@gray, 40%);
     text-align: center;
     margin: 60px 0 90px;
+    padding-bottom: 90px;
+    .col-sm-4{
+      .inside{
+        width: 80%;
+        margin: 0 auto;
+      }
+      p{
+        font-family: "Josefin Slab", Arial;
+        font-weight: 400;
+        font-size: 18px;
+      }
+    }
     h1{
+      margin: 42px 0 38px;
       color: #010000;
       span{
         color: #5E5E5E;
@@ -153,17 +178,21 @@ img.support {
 }
 
 label, .checkbox{
-  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-family: 'Montserrat', Helvetica, Arial;
   text-align: left;
   margin-top: 10px;
 }
 
 .btn.signup{
-  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-family: 'Montserrat', Helvetica, Arial;
   font-size: 22px;
-  padding: 12px 24px;
+  padding: 12px 64px;
   text-decoration: none;
-  color: @gray;
+  background: white;
+  color: #4bb896;
+  border: 4px solid white;
+  .border-radius(0);
+  text-transform: uppercase;
 }
 
 form{
@@ -182,6 +211,7 @@ form{
 }
 
 .hidden-nav{
+  //Add padding with js
   background: #4bb896;
   height: 50px;
   top: 0;
@@ -193,9 +223,10 @@ form{
     margin-top: 0 !important;
   }
   .signup{
-    font-size: 16px;
+    font-size: 15px;
     padding: 4px 12px;
     margin-top: 8px;
+    font-weight: 200;
   }
 }
 

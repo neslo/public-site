@@ -2,14 +2,14 @@
   <div class="container">
     <section class="page1">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12 text-left">
           <%= image_tag 'white_logo.png', width: '310', class: 'logo' %>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-6">
-          <h1>We are developers and designers who volunteer to make a difference.</h1>
-          <%= link_to 'Join Us!', sign_up_index_path, class: 'btn btn-default signup' %>
+          <h1>We are developers and<br />designers who volunteer to<br />make a difference.</h1>
+          <%= link_to 'Join Us', sign_up_index_path, class: 'btn btn-default signup' %>
         </div>
         <div class="col-sm-6">
           <%= image_tag 'home_bubble.png', class: 'img-responsive' %>
@@ -38,6 +38,7 @@
 
       <div class="row">
         <div class="col-sm-4">
+          <div class="inside">
           <%= image_tag 'icon_earth.png', class: 'img-icon' %>
           <h1><span>1.</span>PROBLEM</h1>
           <p>
@@ -46,8 +47,10 @@
           to discover the most
           pressing public issues.
           </p>
+          </div>
         </div>
         <div class="col-sm-4">
+          <div class="inside">
           <%= image_tag 'icon_light_bulb.png', class: 'img-icon' %>
           <h1><span>2.</span>IDEA</h1>
           <p>
@@ -56,8 +59,10 @@
           think and respond to the issue
           at hand.
           </p>
+          </div>
         </div>
         <div class="col-sm-4">
+          <div class="inside">
           <%= image_tag 'icon_rocket.png', class: 'img-icon' %>
           <h1><span>3.</span>SOLUTION</h1>
           <p>
@@ -66,6 +71,7 @@
           the real world. We prioritise
           goodwill and impact.
           </p>
+        </div>
         </div>
       </div>
     </section>
@@ -82,6 +88,7 @@
       </div>
       <div class="row">
         <div class="col-sm-4">
+          <div class="inside">
           <%= image_tag 'icon_heart.png', class: 'img-icon' %>
           <h1>CODE for CONNECTIONS</h1>
           <p>
@@ -92,7 +99,9 @@
           the media.
           </p>
         </div>
+        </div>
         <div class="col-sm-4">
+          <div class="inside">
           <%= image_tag 'icon_graph.png', class: 'img-icon' %>
           <h1>CODE for SKILLS</h1>
           <p>
@@ -102,7 +111,9 @@
           idea to inception.
           </p>
         </div>
+        </div>
         <div class="col-sm-4">
+          <div class="inside">
           <%= image_tag 'icon_map.png', class: 'img-icon' %>
           <h1>CODE for CHANGE</h1>
           <p>
@@ -113,9 +124,11 @@
           the media.
           </p>
         </div>
+        </div>
       </div>
     </section>
 
+    <%# TODO seperate page4 to seperate container for fullscreen background, minimize btn paddings %>
     <section class="page4">
       <div class="well bg-pic header">
         <div class="shadow"></div>
