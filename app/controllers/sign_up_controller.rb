@@ -10,15 +10,13 @@ class SignUpController < ApplicationController
   def create
     @person = Person.new(person_params)
     if @person.save
-    begin
       @mc.lists.subscribe('26dc75437b', {'email' => @person.email})
-    rescue
-      redirect_to sign_up_success_path(@person)
-    end
       redirect_to sign_up_success_path(@person)
     else
       render :index
     end
+  rescue
+    redirect_to sign_up_success_path(@person)
   end
 
   protected
