@@ -1,4 +1,5 @@
 CodeForAus::Application.routes.draw do
+  devise_for :people
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root "page#show"
@@ -10,6 +11,8 @@ CodeForAus::Application.routes.draw do
   resources :sign_up, only: [:index, :create] do
     get 'success'
   end
+
+  resources :profiles
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
