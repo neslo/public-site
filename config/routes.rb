@@ -1,5 +1,9 @@
 CodeForAus::Application.routes.draw do
-  devise_for :people, controllers: { sessions: 'people/sessions', registrations: 'people/registrations' }
+  devise_for :people, controllers: { 
+    sessions: 'people/sessions', 
+    registrations: 'people/registrations',
+    passwords: 'people/passwords'
+  }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root "page#show"
