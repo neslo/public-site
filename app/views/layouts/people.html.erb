@@ -38,10 +38,12 @@
 </head>
 <body>
 
-<%= render partial: 'layouts/people_nav' %>
-
-<%= bootstrap_flash %>
-<%= yield %>
+<div class="container">
+  <div style="margin-top: 60px;">
+    <%= bootstrap_flash %>
+    <%= yield %>
+  </div>
+</div>
 
 <footer>
   <div class="container">
@@ -75,7 +77,7 @@
     <%= link_to root_path do %>
       <%= image_tag 'white_logo.png', height: '46' %>
     <% end %>
-    <%= link_to 'Join Us', sign_up_index_path, class: 'btn btn-default signup pull-right' unless signed_in? %>
+    <%= link_to 'Join Us', sign_up_index_path, class: 'btn btn-default signup pull-right' %>
     <%= render partial: 'layouts/people_nav' %>
   </div>
 </div>
