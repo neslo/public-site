@@ -1,0 +1,11 @@
+<h2>Edit Profile</h2>
+
+<%= simple_form_for @profile, url: profile_path do |f| %>
+  <%= f.input :title, hint: 'Enter your main skill and/or position of employment' %>
+  <%= f.input :description, hint: 'A brief description of yourself' %>
+  <%= f.input :bio, hint: 'Enter you professional bio here', input_html: {rows: 6} %>
+  <%= f.input :twitter, hint: 'Please type your user name ie. @username' %>
+  <%= f.input :github, hint: 'Please type your user name ie. @username' %>
+  <br /><br />
+  <%= f.submit %>
+<% end %>
