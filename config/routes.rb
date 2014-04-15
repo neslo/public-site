@@ -1,5 +1,5 @@
 CodeForAus::Application.routes.draw do
-  devise_for :people
+  devise_for :people, controllers: { sessions: 'people/sessions', registrations: 'people/registrations' }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root "page#show"
@@ -12,7 +12,9 @@ CodeForAus::Application.routes.draw do
     get 'success'
   end
 
-  resources :profiles
+  resource :profile
+
+  get 'profiles', to: 'profiles#index'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

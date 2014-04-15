@@ -11,4 +11,8 @@ class Person < ActiveRecord::Base
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates_length_of :postcode, is: 4
   validates_uniqueness_of :email
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

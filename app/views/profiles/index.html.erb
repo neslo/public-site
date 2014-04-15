@@ -1,1 +1,14 @@
-<h1>Volunteer Profiles</h1>
+<h1 class="text-center">Volunteer Profiles</h1>
+
+<% @profiles.each_slice(3) do |ps| -%>
+  <div class="row">
+    <% ps.each do |p| -%>
+      <div class="col-xs-4 single-profile">
+        <%= content_tag :h2, p.person.full_name -%>
+        <%= content_tag :p, p.title -%>
+        <%= content_tag :h3, p.description %>
+        <%= content_tag :p, "twitter: #{p.twitter}, github: #{p.github}", class: 'small' %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

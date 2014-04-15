@@ -21,6 +21,6 @@ class SignUpController < ApplicationController
 
   protected
   def person_params
-    params.require(:person).permit(:first_name, :last_name, :email, :phone, :postcode, volunteer_role_ids: [])
+    params.require(:person).permit(:first_name, :last_name, :email, :phone, :postcode, :password, volunteer_role_ids: [])
   end
 end
