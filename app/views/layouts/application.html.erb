@@ -38,13 +38,21 @@
 </head>
 <body>
 
-<%= render partial: 'layouts/people_nav' %>
+<%= render partial: 'layouts/people_nav' if current_page?(root_url) %>
 
 <%= bootstrap_flash %>
 <%= yield %>
 
 <footer>
   <div class="container">
+    <div class="sponsors">
+      <div>
+        <p>Hosting credits sponsored by:</p>
+        <a href="http://www.digitalocean.com" target="_blank">
+          <%= image_tag 'do_logo.png', height: '40' %>
+        </a>
+      </div>
+    </div>
     <div class="nav hidden">
       <%= link_to 'Team', root_path %>
       <%= link_to 'Blog', root_path %>

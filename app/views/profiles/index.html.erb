@@ -6,6 +6,7 @@
       <div class="col-xs-4 single-profile">
         <%= content_tag :h2, p.person.full_name -%>
         <%= content_tag :p, p.title -%>
+        <%= image_tag avatar_url(p.person), size: "120" %>
         <%= content_tag :h3, p.description %>
         <%= content_tag :p, "twitter: #{p.twitter}, github: #{p.github}", class: 'small' %>
       </div>
