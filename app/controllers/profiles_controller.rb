@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   layout 'people'
 
   def index
-    @profiles = Profile.includes(:person)
+    @profiles = Profile.includes(:person).order("RANDOM()")
   end
 
   def edit
