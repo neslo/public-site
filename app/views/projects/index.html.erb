@@ -1,0 +1,30 @@
+<div class="main white">
+  <div class="container">
+
+    <section class="page2">
+      <div class="header">
+        <h1>Projects</h1>
+        <h2>
+          Our fellowship, accelerator and incubator apps are the product of hundreds of community interviews. In partnership with our government partners, fellows and startup founders figure out how to best serve citizens.
+        </h2>
+      </div>
+      <% @projects.each_slice(3) do |ps| -%>
+        <div class="row">
+          <% ps.each do |p| -%>
+            <div class="col-sm-4">
+            <div class="single-project">
+              <%= content_tag :h2, p.title -%>
+              <%= content_tag :p, p.overview -%>
+              <% if p.environment.present? %>
+                <h3>Environment</h3>
+                <%= content_tag :p, p.environment %>
+              <% end %>
+              <%= link_to 'Learn more about this app', p -%>
+            </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+  </div>
+</div>
