@@ -32,6 +32,7 @@ gem 'pry'
 gem 'simple_form'
 gem 'rails_12factor', group: :production
 gem 'letter_opener', group: :development
+gem 'friendly_id'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

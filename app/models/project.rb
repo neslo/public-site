@@ -1,4 +1,7 @@
 class Project < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :finders]
+
   has_one :team, class_name: 'ProjectTeam'
   has_many :roles, through: :team
 
