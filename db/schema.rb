@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140318125705) do
+ActiveRecord::Schema.define(version: 20140506141256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,6 +99,42 @@ ActiveRecord::Schema.define(version: 20140318125705) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "project_roles", force: true do |t|
+    t.integer  "project_team_id"
+    t.string   "title"
+    t.string   "overview"
+    t.text     "description"
+    t.integer  "previous_person_id"
+    t.integer  "person_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "project_roles", ["person_id"], name: "index_project_roles_on_person_id", using: :btree
+  add_index "project_roles", ["previous_person_id"], name: "index_project_roles_on_previous_person_id", using: :btree
+  add_index "project_roles", ["project_team_id"], name: "index_project_roles_on_project_team_id", using: :btree
+
+  create_table "project_teams", force: true do |t|
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "project_teams", ["project_id"], name: "index_project_teams_on_project_id", using: :btree
+
+  create_table "projects", force: true do |t|
+    t.string   "title"
+    t.string   "overview"
+    t.string   "live_url"
+    t.string   "codebase"
+    t.string   "environment"
+    t.text     "description"
+    t.string   "based_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "volunteer_roles", force: true do |t|

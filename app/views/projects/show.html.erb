@@ -1,0 +1,57 @@
+<div class="main white">
+  <div class="container">
+    <section class="page1">
+      <div class="row header project-details">
+        <%= content_tag :h1, @project.title -%>
+        <%= bootstrap_flash %>
+        <%= content_tag :h2, @project.overview -%>
+        <div class="col-sm-4 text-left">
+          <h2>Overview</h2>
+          <%= content_tag :p, @project.overview -%>
+          <%= content_tag :p, @project.live_url.upcase, class: 'url' -%>
+          <h2>Project Team</h2>
+          <% @project.roles.each do |role| %>
+            <div class="project-role">
+            <%= content_tag :p do %>
+              <%= role.title %> -
+              <%= role.person.full_name if role.person.present? %>
+              <% if role.person.present? && role.previous_person.present? %>
+                <br />
+              <%= "(Previously: #{role.previous_person.full_name})" %>
+              <% end %>
+            <% end %>
+            <% if signed_in? %>
+              <%= link_to 'Tap On', project_tap_on_path(@project, role: role), class: 'btn btn-success btn-xs' if role.can_tap_on?(current_person) %>
+              <%= link_to 'Tap Off', project_tap_off_path(@project, role: role), class: 'btn btn-danger btn-xs' if role.can_tap_off?(current_person) %>
+            <% end %>
+          </div>
+        <% end %>
+        </div>
+        <div class="col-sm-8 text-left">
+          <div class="well">
+            <h2>Summary</h2>
+            <table>
+              <tr>
+                <th>Live</th>
+                <%= content_tag :td, @project.live_url -%>
+              </tr>
+              <tr>
+                <th>Codebase</th>
+                <%= content_tag :td, @project.codebase -%>
+              </tr>
+              <tr>
+                <th>Environment</th>
+                <%= content_tag :td, @project.environment -%>
+              </tr>
+              <tr>
+                <th>Based on</th>
+                <%= content_tag :td, @project.based_on -%>
+              </tr>
+            </table>
+          </div>
+          <%= content_tag :div, @project.description.html_safe -%>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

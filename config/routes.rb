@@ -20,6 +20,11 @@ CodeForAus::Application.routes.draw do
 
   get 'profiles', to: 'profiles#index'
 
+  resources :projects, param: :title, only: [:index, :show] do
+    get 'tap_on'
+    get 'tap_off'
+  end
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
