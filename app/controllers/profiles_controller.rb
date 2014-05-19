@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.first_or_create(person_id: current_person.id)
+    @profile = Profile.where(person_id: current_person.id).first_or_create
   end
 
   def update
