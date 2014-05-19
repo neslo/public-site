@@ -1,47 +1,35 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'rails', '4.0.1'
-gem 'pg'
+gem "rails", "4.1.1"
+gem "turbolinks"
+gem "pg"
+gem "therubyracer", platforms: :ruby
 
-gem 'sass-rails', '~> 4.0.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem "friendly_id"
+gem "mailchimp-api", require: "mailchimp"
+gem "simple_form"
+gem "puma"
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
-gem 'less-rails'
-gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
+# ActiveAdmin
+gem "activeadmin", github: "gregbell/active_admin"
+gem "devise"
 
-gem 'jquery-rails'
+gem "sass-rails", github: "rails/sass-rails"
+gem "uglifier", ">= 1.3.0"
+gem "coffee-rails", "~> 4.0.0"
+gem "jbuilder", "~> 2.0"
 
-gem 'turbolinks'
+gem "less-rails"
+gem "twitter-bootstrap-rails", github: "seyhunak/twitter-bootstrap-rails", branch: "bootstrap3"
+gem "jquery-rails"
 
-gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+group "development" do
+  gem "spring"
+  gem "pry"
+  gem "foreman"
+  gem "letter_opener"
 end
 
-gem 'foreman'
-gem 'zeus'
-gem 'puma'
-gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'mailchimp-api', require: 'mailchimp'
-gem 'pry'
-gem 'simple_form'
-gem 'rails_12factor', group: :production
-gem 'letter_opener', group: :development
-gem 'friendly_id'
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :production do
+  gem "rails_12factor"
+end
