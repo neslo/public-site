@@ -1,36 +1,16 @@
-@import "twitter/bootstrap/bootstrap";
-@import "twitter/bootstrap/mixins";
-
-// Set the correct sprite paths
-@iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
-@iconWhiteSpritePath: image-url("twitter/bootstrap/glyphicons-halflings-white.png");
-
-// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
-@fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
-@fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot?#iefix");
-@fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
-@fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
-@fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
-
-// Font Awesome
-@import "fontawesome/font-awesome";
-
-// Glyphicons
-//@import "twitter/bootstrap/sprites.less";
-
-// Your custom LESS stylesheets goes here
-//
-// Since bootstrap was imported above you have access to its mixins which
-// you may use and inherit here
-//
-// If you'd like to override bootstrap's own variables, you can do so here as well
-// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
-//
-// Example:
-// @linkColor: #ff0000;
+@import "bootstrap";
+@import "font-awesome";
 
 @import url('http://fonts.googleapis.com/css?family=Montserrat:400,700');
 @import url('http://fonts.googleapis.com/css?family=Josefin+Slab:300,400');
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
 
 body{
   font-family: 'Montserrat', Helvetica, Arial;
@@ -53,6 +33,8 @@ h2{
   }
 }
 
+
+
 h3{
   font-size: 15px;
   line-height: 2em;
@@ -69,6 +51,7 @@ h3{
   }
 }
 
+
 section{
   .header{
     margin: 40px auto 60px;
@@ -79,7 +62,7 @@ section{
       display: inline-block;
       text-transform: uppercase;
       border: 2px solid #000;
-      .border-radius(9px);
+      @include border-radius(9px);
       font-size: 22px;
     }
     h2{
@@ -114,7 +97,7 @@ section{
     margin-top: 20px;
   }
   &.page2, &.page3, &.page4{
-    border-bottom: 2px solid lighten(@gray, 40%);
+    border-bottom: 2px solid lighten($gray, 40%);
     text-align: center;
     margin: 60px 0 90px;
     padding-bottom: 90px;
@@ -170,7 +153,7 @@ section{
   background: black;
   position: absolute;
   margin: -19px;
-  .opacity(0.5);
+  @include opacity(0.5);
 }
 
 img.support {
@@ -191,7 +174,7 @@ label, .checkbox{
   background: white;
   color: #4bb896;
   border: 4px solid white;
-  .border-radius(0);
+  @include border-radius(0);
   text-transform: uppercase;
 }
 
@@ -207,7 +190,7 @@ label, .checkbox{
     text-decoration: none;
     color: white;
     border: 4px solid white;
-    .border-radius(0);
+    @include border-radius(0);
     text-transform: uppercase;
   }
 }
@@ -237,7 +220,7 @@ form{
   background: white;
   color: black !important;
   padding: 6px 64px;
-  .border-radius(4px);
+  @include border-radius(4px);
   text-decoration: none !important;
 }
 
@@ -249,7 +232,7 @@ form{
   position: fixed;
   margin-top: -50px;
   width: 100%;
-  .box-shadow(0 0 9px black);
+  @include box-shadow(0 0 9px black);
   &.show{
     margin-top: 0 !important;
   }
@@ -282,7 +265,7 @@ footer{
     font-family: 'Minion Pro', Garamond, Arial;
     font-size: 21px;
     a{
-      color: lighten(@gray, 20%);
+      color: lighten($gray, 20%);
       padding: 0 40px;
     }
   }
@@ -369,4 +352,6 @@ footer{
     }
   }
 }
+
+
 
